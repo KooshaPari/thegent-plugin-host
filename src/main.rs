@@ -91,7 +91,7 @@ fn main() {
                 Err(e) => eprintln!("Failed to install plugin: {}", e),
             }
         }
-        Commands::Uninstall { name, force } => {
+        Commands::Uninstall { name, force: _ } => {
             match use_case.uninstall_plugin(&name) {
                 Ok(()) => println!("Uninstalled plugin {}", name),
                 Err(e) => eprintln!("Failed to uninstall plugin: {}", e),

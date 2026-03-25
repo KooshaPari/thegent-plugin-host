@@ -2,7 +2,6 @@
 
 use crate::domain::entities::Plugin;
 use crate::ports::driven::PluginLoaderPort;
-use std::fs;
 use std::path::Path;
 
 /// Dynamic library plugin loader
