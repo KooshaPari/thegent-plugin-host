@@ -1,0 +1,51 @@
+[package]
+name = "thegent-plugin-host"
+version = "0.1.0"
+edition = "2021"
+description = "Plugin host and loader for thegent"
+readme = "README.md"
+authors = ["KooshaPari <kooshapari@kooshapari.com>"]
+homepage = "https://kooshapari.com"
+repository = "https://github.com/KooshaPari/thegent-plugin-host"
+documentation = "https://docs.kooshapari.com/thegent-plugin-host"
+keywords = ["plugin", "host", "loader", "thegent", "agent"]
+categories = ["development-tools", "plugins"]
+
+[dependencies]
+# Core
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.35", features = ["full"] }
+thiserror = "1.0"
+anyhow = "1.0"
+tracing = "0.1"
+
+# Plugin interface
+parking_lot = "0.12"
+once_cell = "1.19"
+semver = "1.0"
+regex = "1.10"
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.6", features = ["v4", "serde"] }
+
+# Async
+futures = "0.3"
+async-trait = "0.1"
+
+# CLI
+clap = { version = "4.5", features = ["derive"] }
+
+# Testing
+[dev-dependencies]
+tempfile = "3.9"
+mockall = "0.12"
+proptest = "1.4"
+
+[features]
+default = ["runtime-native"]
+runtime-native = []
+runtime-dynamic = []
+
+[[test]]
+name = "integration"
+path = "tests/integration.rs"
