@@ -1,5 +1,5 @@
 [package]
-name = "thegent-plugin-host"
+name = "PrismRs"
 version = "0.1.0"
 edition = "2021"
 description = "Plugin host and loader for thegent"
